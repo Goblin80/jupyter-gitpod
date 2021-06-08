@@ -1,6 +1,9 @@
 ports:
 - port: 8888
   onOpen: open-browser
+- port: 8000
+- port: 5000
+
 tasks:
-- init: jupyter --version
+- init: pip install uvicorn fastapi flask
   command: jupyter notebook --NotebookApp.allow_origin=\'$(gp url 8888)\'
