@@ -1,9 +1,17 @@
 ports:
-- port: 8888
-  onOpen: open-browser
-- port: 8000
-- port: 5000
+  - port: 8888
+    onOpen: open-browser
+  - port: 8000
+  - port: 5000
 
 tasks:
-- init: pip install uvicorn fastapi flask
-  command: jupyter notebook --NotebookApp.allow_origin=\'$(gp url 8888)\'
+  - init: pip install uvicorn fastapi flask matplotlib scikit-learn
+    command: jupyter notebook --NotebookApp.allow_origin=\'$(gp url 8888)\'
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint@2.0.0:CwAMx4wYz1Kq39+1Aul4VQ==
+    - ms-python.python
+    - ms-pyright.pyright
+    - matangover.mypy
+    - magicstack.magicpython
